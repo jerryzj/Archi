@@ -7,21 +7,23 @@ int main (void){
 
     scanf("%d",&n);
     result = fibo(n);
-    printf("The N th fibonacci number is : %d\n",result );
+    printf("%d\n",result );
 
     return 0;
 }
 
 int fibo(int n){
-    int i;
+    int previous = 0;
+    int current = 1;
+    int next = 1;
 
-    if(n == 0){
-        return 1;
+
+    if(n == 0) return 0;
+    for (int i = 1; i <= n; ++i)
+    {
+        next = current + previous;
+        previous = current;
+        current = next;
     }
-    else{
-        for(i=n-1 ; i>1 ; i--){
-            n = n*i;
-        }
-        return n;
-    }
+    return next;
 }
