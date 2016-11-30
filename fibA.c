@@ -17,15 +17,15 @@ int main (void){
 }
 
 int fibo(int n){
-    int previous = 0;                 //record Fn-2
-    int current = 1;                  //record Fn-1
-    int next = 1;                     //record Fn
+    int Fn_2 = 0;                   //record Fn-2
+    int Fn_1 = 1;                   //record Fn-1
+    int Fn = 1;                     //record Fn
 
-    if(n == 0) return 0;              //return F0 = 1
+    if(n == 0) return 0;            //return F0 = 1
     for (int i = 2; i <= n; ++i){
-        next = current + previous;    //Fn = Fn-1 + Fn-2
-        previous = current;           //Shift for next iteration
-        current = next;               //Shift for next iteration
+        Fn = Fn_1 + Fn_2;           //Fn = Fn-1 + Fn-2
+        Fn_2 = Fn_1;                //Shift for Fn iteration
+        Fn_1 = Fn;                  //Shift for Fn iteration
     }
-    return next;                      //exit loop,return result 
+    return Fn;                      //exit loop,return result
 }
