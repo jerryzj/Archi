@@ -10,14 +10,14 @@ main:
     jal     fibo            # go to function fibo to do calculation
     move    $a0, $v0        # copy Fn to $a0 for syscall1 to print
     li      $v0, 1          # prepare for syscall 1,printing integer to the user
-    syscall
+    syscall                 # syscall1
     li      $v0, 10         # prepare for syscall10,exit
-    syscall
+    syscall                 # syscall10
 
 fibo:
 
     bne     $a0, $zero, loophead    # if n is not equal to 0,go to loophead
-    li      $v0, 0                  #
+    li      $v0, 0                  # prepare 0 as return value when n = 0
     jr      $ra                     # return to main with value 0
 
 loophead:
