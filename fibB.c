@@ -25,5 +25,5 @@ int fibo(int n){
     else{
         result = fibo(n-1) + fibo(n-2);      //Fn = Fn-1 + Fn-2
     }
-    return result;
+    return result;              //return result to main
 }
